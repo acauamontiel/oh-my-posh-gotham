@@ -2,7 +2,7 @@
 
 Configuration file for [Oh My Posh](https://ohmyposh.dev) based on [vim-gotham](https://github.com/whatyouhide/vim-gotham) colorscheme.
 
-![gotham](https://github.com/acauamontiel/oh-my-posh-gotham/assets/2424784/7874cb44-3d3d-4bd0-92b4-d0ca734fa394)
+![gotham](gotham.png)
 
 ### Usage
 
