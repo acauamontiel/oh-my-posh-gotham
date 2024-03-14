@@ -127,6 +127,48 @@
         }
       ],
       "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "#33859d",
+          "background_templates": [
+            "{{ if gt .Code 0 }}#c33027{{ end }}"
+          ],
+          "foreground": "#d3ebe9",
+          "invert_powerline": true,
+          "powerline_symbol": "\ue0b2",
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "powerline",
+          "template": " {{ if gt .Code 0 }}\uf00d {{ reason .Code }}{{ else }}\uf42e{{ end }} {{ .FormattedMs }} ",
+          "type": "executiontime"
+        },
+        {
+          "background": "#245361",
+          "foreground": "#98d1ce",
+          "invert_powerline": true,
+          "powerline_symbol": "\ue0b2",
+          "properties": {
+            "style": "full"
+          },
+          "style": "powerline",
+          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "type": "node"
+        },
+        {
+          "background": "#081f2d",
+          "foreground": "#26a98b",
+          "invert_powerline": true,
+          "trailing_powerline": "\ue0b4",
+          "style": "diamond",
+          "template": " \ue641 {{ .CurrentDate | date .Format }} ",
+          "type": "time"
+        }
+      ],
+      "type": "prompt"
     }
   ],
   "console_title_template": "{{ .Folder }}",
