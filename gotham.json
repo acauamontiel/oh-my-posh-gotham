@@ -3,12 +3,13 @@
   "blocks": [
     {
       "alignment": "left",
+      "newline": true,
       "segments": [
         {
           "background": "#195465",
           "foreground": "#98d1ce",
           "style": "plain",
-          "template": " {{.Icon}} ",
+          "template": " {{.Icon}} {{ .HostName }} ",
           "type": "os"
         },
         {
@@ -115,8 +116,16 @@
       "type": "prompt"
     },
     {
-      "alignment": "right",
+      "alignment": "left",
+      "newline": true,
       "segments": [
+        {
+          "background": "#245361",
+          "foreground": "#98d1ce",
+          "style": "plain",
+          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "type": "node"
+        },
         {
           "background": "#33859d",
           "background_templates": [
@@ -129,26 +138,6 @@
           },
           "template": " {{ if gt .Code 0 }}\uf00d {{ reason .Code }}{{ else }}\uf42e{{ end }} {{ .FormattedMs }} ",
           "type": "executiontime"
-        },
-        {
-          "background": "#245361",
-          "foreground": "#98d1ce",
-          "style": "plain",
-          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
-          "type": "node"
-        }
-      ],
-      "type": "prompt"
-    },
-    {
-      "alignment": "right",
-      "segments": [
-        {
-          "background": "#edb54b",
-          "foreground": "#081f2d",
-          "style": "plain",
-          "template": " EOL Sales: {{ .Env.EOLSALES }} days ",
-          "type": "time"
         }
       ],
       "type": "prompt"
@@ -160,6 +149,6 @@
     "template": "\ue0b0 "
   },
   "console_title_template": "{{ .Folder }}",
-  "final_space": false,
+  "final_space": true,
   "version": 2
 }
